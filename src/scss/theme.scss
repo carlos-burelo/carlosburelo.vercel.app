@@ -65,6 +65,7 @@ textarea {
     color: $text;
   }
 }
-.scrollable {
-  scroll-margin-top: 100px;
+.heading {
+  scroll-margin-top: calc(var(--navbar-height) + 10px);
+  // padding-top: ;
 }

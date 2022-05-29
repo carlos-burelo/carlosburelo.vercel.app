@@ -14,7 +14,7 @@ export default function Content({ children, table }: ContentProps) {
         <Subtitle text='Tabla de contenido' />
         {table && <Table data={table} />}
       </div>
-      {children}
+      <div className={_.content}>{children}</div>
     </section>
   )
 }

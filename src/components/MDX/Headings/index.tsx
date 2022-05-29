@@ -18,6 +18,8 @@ export function Heading($props: any, tag: string) {
   } else {
     // object or array
     const child = $props.children
+    // if (!Array.isArray(child)) console.log(child)
+
     const isArrayNode = Array.isArray(child)
     if (!isArrayNode) {
       const matchCustomId = child.props.children.match(idRx)
@@ -25,10 +27,14 @@ export function Heading($props: any, tag: string) {
         ? `#${createIdFromText(child.props.children)}`
         : `#${matchCustomId[0].replace(idRx, '$1')}`
       const text = child.props.children.replace(idRx, '')
-      const tag = child.type
+      const childTag = child.type
+      // const parentTag = $props
+      // console.log(parentTag)
       return (
         <Wrapper id={id}>
-          <Tag tag={tag}>{text}</Tag>
+          <Tag tag={tag}>
+            <Tag tag={childTag}>{text}</Tag>
+          </Tag>
         </Wrapper>
       )
     } else {
@@ -57,7 +63,7 @@ interface WrapperProps {
 
 export function Wrapper({ id, children }: WrapperProps) {
   return (
-    <div className='scrollable'>
+    <div className='heading'>
       <Link href={id}>
         <a id={id.replace('#', '')}>{children}</a>
       </Link>

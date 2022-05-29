@@ -1,15 +1,26 @@
 @import 'utils';
 
 .container {
-  display: grid;
-  @include tablet {
-    grid-template-columns: 0.5fr 1fr;
+  display: flex;
+  flex-direction: column;
+  @include desktop {
+    flex-direction: row;
+    .table {
+      width: 30%;
+    }
+    .content {
+      width: 70%;
+    }
   }
 }
 .table {
-  @include tablet {
+  --footer-height: 200px;
+  display: none;
+  @include desktop {
+    display: block;
+    --footer-height: 160px;
     position: sticky;
-    top: var(--navbar-height);
-    height: calc(100vh - var(--navbar-height));
+    top: var(--footer-height);
+    height: calc(100vh - var(--navbar-height) - var(--footer-height));
   }
 }
