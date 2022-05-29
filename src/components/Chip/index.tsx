@@ -1,4 +1,3 @@
-// import { Colors } from '#types'
 import _ from './Chip.module.scss'
 import { hexColors, Color } from '#data/colors'
 
