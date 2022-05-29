@@ -12,10 +12,10 @@ console.log(
   isDev ? join(process.cwd(), 'public/assets') : join(process.cwd(), 'assets')
 )
 // read dir in production
-console.log(
-  'reading assests path [assets]:',
-  readdirSync(join(process.cwd(), 'assets'))
-)
+// console.log(
+//   'reading assests path [assets]:',
+//   readdirSync(join(process.cwd(), 'assets'))
+// )
 console.log(
   'reading assests path [pubic/assets]:',
   readdirSync(join(process.cwd(), 'public/assets'))
