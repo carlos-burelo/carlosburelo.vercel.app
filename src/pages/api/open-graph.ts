@@ -1,12 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import chromium from 'chrome-aws-lambda'
 import playwright from 'playwright-core'
+import { EDGE_PATH } from '#data/env'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const browser = await playwright.chromium.launch({
     args: chromium.args,
-    executablePath: await chromium.executablePath,
-    headless: chromium.headless,
+    executablePath: process.env.NODE_ENV !== 'development'
+      ? await chromium.executablePath
+      : EDGE_PATH,
+    headless: process.env.NODE_ENV !== "development" ? chromium.headless : true,
   })
   const page = await browser.newPage({
     viewport: {
