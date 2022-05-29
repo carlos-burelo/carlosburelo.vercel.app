@@ -2,10 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import chromium from 'chrome-aws-lambda'
 import playwright from 'playwright-core'
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const browser = await playwright.chromium.launch({
     args: chromium.args,
     executablePath: await chromium.executablePath,
