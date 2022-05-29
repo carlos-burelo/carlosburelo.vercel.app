@@ -167,7 +167,7 @@ Posiblemente este es el método principal por el cual se distinguen la promesas 
 
 Mas fácilmente podemos entender a **then** como el método que hace algo una vez que la promesa ha terminado, y dentro de then() escribimos un callback que es el que se encargará de recibir la respuesta que la promesa haya devuelto.
 
-### `.catch`
+### `.catch()`
 
 Catch podemos considerarlo como un método auxiliar, es decir, una contra-medida en caso de que la promesa no se resuelva correctamente y está retorne un error, como por ejemplo, Si una petición a una API devuelve un código de estado en el rango de 400 a 500, esto se consideraría como una promesa no resuelta, por lo que el método _.then()_ quedaría anulado y se saltaría directamente al método `catch()` y este recibiría un callback para manejar el error, por ejemplo:
 
