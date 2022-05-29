@@ -2,28 +2,30 @@
 title: Aprendiendo conceptos comunes de javascript
 tags:
   - javascript
-  - programacion
+  - programación
 date: 2022-04-22
 image: /images/hero.webp
 table:
-  - introduccion
-  - caracteristicas
+  - introducción
+  - características
   - - scope
-    - mutacion
+    - mutación
     - funciones
     - - nombres
-      - parametros
+      - parámetros
     - callbacks
     - promesas
     - async/await
 ---
 
-# Es realmente necesario entenderlas? #[introduccion]
+# Introducción #[introducción]
 
 Personalmente creo que es de vital importancia entender algunos conceptos clave de javascript, como por ejemplo, el scope, la mutación, las funciones y los objetos, etc.
 ya que estos nos proveen de diversas características y funciones que nos permiten trabajar con el lenguaje de forma mas sencilla y eficiente, por eso me he dado a la tarea de agrupar algunas de estas características de javascript que lo hacen el lenguaje popular que es hoy, y tratare de simplificar lo mas posible el tema para que pueda ser entendido por los demás 😀.
 
-# Características del lenguaje #[caracteristicas]
+# Características del lenguaje #[características]
+
+Como cualquier otro lenguaje de programación, javascript esta dotado de diversas características y peculiaridades que son las que definen con que facilidad podremos trabajar al momento de crear nuestras aplicaciones, siendo uno de los lenguajes mas populares actualmente veamos que nos puede ofrecer.
 
 ## Scope 🟦 #[scope]
 
@@ -51,7 +53,7 @@ if (age > 18) {
 console.log(isOlder) // Retorna undefined
 ```
 
-## Mutación ☢️ #[mutacion]
+## Mutación ☢️ #[mutación]
 
 La **mutación** es otro concepto que nos ayuda a entender el ciclo de vida de las variables en javascript, es decir, cuando una variable es mutada, esta puede cambiar de valor y esto puede causar un comportamiento inesperado si no sabemos en que punto de nuestra aplicación hemos mutado su valor, por ejemplo:
 
@@ -117,16 +119,16 @@ Aquí tenemos el ejemplo mas común de como crear una función en javascript, y 
 ### `Nombre de la función` #[nombres]
 
 El nombre debe ser claro, corto y consistente usando la nomenclatura **_camelCase_** en ingles, ademas de representar el propósito de la función sin agregados extras.
-Comúnmente de utilizan ciertos prefijos como `get` y `set` para indicar que la función es un _getter_ o _setter_ y sufijos como _Handler_ para indicar que la función es un manejador de eventos.
+Comúnmente de utilizan ciertos prefijos como `get` y `set` para indicar que la función es un _getter_ o _setter_ y sufijos como _Handler_ para indicar que la función es un gestor de eventos.
 
 Por ejemplo:
 
 - **sumNumbers**: Suma dos números
 - **getAge**: Retorna la edad de una persona
 - **setAge**: Cambia la edad de una persona
-- **onClikHandler**: Maneja el evento click
+- **onClickHandler**: Maneja el evento click
 
-### `Parámetros` #[parametros]
+### `Parámetros` #[parámetros]
 
 Cuando creamos una función, podemos definir una serie de parámetros que modificaran el comportamiento de la función en base al valor de estos.
 
