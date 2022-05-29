@@ -1,3 +1,4 @@
+import { createIdFromText } from '#utils/text'
 import Link from 'next/link'
 import _ from './Table.module.scss'
 
@@ -13,7 +14,7 @@ export default function ContentList({ data }: TableProps) {
           {Array.isArray(row) ? (
             <ContentList data={row} />
           ) : (
-            <Link href={'#' + row.replace(/\s/g, '')}>
+            <Link href={'#' + createIdFromText(row)}>
               <a className={_.link}>{row}</a>
             </Link>
           )}

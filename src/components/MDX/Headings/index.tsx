@@ -4,7 +4,7 @@ export function Heading($props: any, tag: string) {
   const haveNodes = typeof $props.children !== 'string'
   const idRx = /#\[(.*?)\]/g
   if (!haveNodes) {
-    // asignacion de un id, ya sea personalizado o generado
+    // asignación de un id, ya sea personalizado o generado
     const matchCustomId = $props.children.match(idRx)
     const id = !matchCustomId
       ? `#${createIdFromText($props.children)}`
@@ -65,7 +65,7 @@ export function Wrapper({ id, children }: WrapperProps) {
   return (
     <div className='heading'>
       <Link href={id}>
-        <a id={id.replace('#', '')}>{children}</a>
+        <a id={createIdFromText(id)}>{children}</a>
       </Link>
     </div>
   )
