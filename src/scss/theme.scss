@@ -1,0 +1,70 @@
+@import 'utils';
+* {
+  &::selection {
+    background-color: $background-selection;
+  }
+}
+body {
+  background: $background;
+}
+:root {
+  --padding-container: 0 10px;
+  --navbar-height: 70px;
+  @include tablet {
+    --padding-container: 0 50px;
+    --navbar-height: 100px;
+  }
+  @include desktop {
+    --padding-container: 0 100px;
+  }
+}
+h1,
+h2,
+h3 {
+  color: $title;
+}
+p {
+  color: $subtitle;
+}
+button {
+  background-color: $background-button;
+  color: $titles-inverted;
+  border: 2px solid $background-button;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: $min-radius;
+  @include transition;
+  font-size: 17px;
+  line-height: 1em;
+  @include center;
+  &:hover {
+    background-color: $primary;
+  }
+}
+a {
+  color: $primary;
+}
+img {
+  border-radius: $min-radius;
+}
+input,
+textarea {
+  color: $text;
+  background-color: $background;
+  border-radius: $min-radius;
+  border: solid 1px $border;
+  &:hover {
+    border-color: $text;
+  }
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 1px $primary;
+  }
+  &::placeholder {
+    color: $text;
+  }
+}
+.scrollable {
+  scroll-margin-top: 100px;
+}

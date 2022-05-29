@@ -1,0 +1,15 @@
+@import 'utils';
+
+.container {
+  display: grid;
+  @include tablet {
+    grid-template-columns: 0.5fr 1fr;
+  }
+}
+.table {
+  @include tablet {
+    position: sticky;
+    top: var(--navbar-height);
+    height: calc(100vh - var(--navbar-height));
+  }
+}

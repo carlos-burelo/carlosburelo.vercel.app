@@ -1,0 +1,56 @@
+@import 'utils';
+
+.projects {
+  display: grid;
+  gap: 20px;
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.head {
+  margin: 40px auto;
+  .titleSection {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  @include tablet {
+    max-width: 50%;
+  }
+}
+.card {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cardContent {
+  margin-top: 10px;
+  border-radius: $min-radius;
+  background-color: $background-card;
+  padding: 10px;
+  box-shadow: var(--shadow-card);
+}
+.image {
+  box-shadow: var(--shadow-card);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 5px;
+}
+.tags {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+}
+.description {
+  margin-bottom: 5px;
+  line-height: 1.6;
+  @include text-wrap(2);
+}

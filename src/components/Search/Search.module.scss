@@ -1,0 +1,29 @@
+@import 'utils';
+
+.box {
+  width: 100%;
+  position: relative;
+  height: 45px;
+  @include tablet {
+    height: 40px;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 45px;
+    height: 45px;
+    @include center;
+    color: $text;
+    @include tablet {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  .input {
+    padding: 10px 15px;
+    padding-left: 45px;
+    background-color: transparent;
+  }
+}

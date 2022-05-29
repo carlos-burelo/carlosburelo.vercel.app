@@ -1,0 +1,147 @@
+@import 'utils';
+
+.mdx {
+  --background-code: #191920;
+  --background-toolbar: #09090c;
+  --text-code: #abb2bf;
+  > * {
+    margin-bottom: 20px;
+  }
+  h1 {
+    scroll-margin-top: 5rem;
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  p,
+  li,
+  a {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  p {
+    a {
+      position: relative;
+      color: $primary;
+      &:hover {
+        &::after {
+          display: block;
+        }
+      }
+      &::after {
+        // @include pulse;
+        display: none;
+        position: absolute;
+        top: -30px;
+        left: -50%;
+        content: attr(title) ' 🌐';
+        min-inline-size: max-content;
+        padding: 2px 6px;
+        border: solid 1px var(--border);
+        background-color: var(--background);
+        border-radius: var(--radius);
+      }
+    }
+  }
+  li {
+    color: $text;
+  }
+  strong {
+    color: $title;
+  }
+  em {
+    font-weight: 600;
+  }
+  :not(pre) > code {
+    font-weight: 500;
+    line-height: 1;
+    color: $primary;
+    background-color: $background-chip;
+    padding: 0px 6px;
+    border-radius: $min-radius;
+  }
+  pre,
+  code[class*='language-'],
+  pre[class*='language-'] {
+    --background-selection: #7a96f310;
+    padding: 15px;
+    border-radius: $min-radius;
+    color: var(--text-code);
+    background-color: var(--background-code);
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.5;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    max-width: 100%;
+    code span {
+      font-family: 'Code';
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    span,
+    code {
+      &::selection {
+        background-color: var(--background-selection);
+      }
+    }
+  }
+  [data-rehype-pretty-code-title] {
+    border-radius: $min-radius $min-radius 0 0;
+    background-color: var(--background-toolbar);
+    padding: 10px;
+    color: var(--text-code);
+    font-weight: 500;
+  }
+  [data-rehype-pretty-code-title] ~ pre {
+    border-radius: 0 0 $min-radius $min-radius;
+  }
+  .line {
+    padding: 2.5px 0;
+    border-radius: 5px;
+  }
+  h1,
+  h1,
+  h3 {
+    code {
+      font-weight: 600;
+      padding: 3px 6px;
+    }
+  }
+  table {
+    border-collapse: collapse;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid $border;
+  }
+  td,
+  th {
+    padding: 8px;
+  }
+  blockquote {
+    border-left: solid 10px $primary;
+    background: $background-card;
+    border-radius: $min-radius $min-radius;
+    padding: 10px;
+    padding-left: 15px;
+    margin: 0;
+    p {
+      margin: 0;
+    }
+  }
+}

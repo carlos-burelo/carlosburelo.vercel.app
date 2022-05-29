@@ -1,0 +1,29 @@
+@import 'utils';
+
+.about {
+  display: grid;
+  gap: 30px;
+  align-items: center;
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.text {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.description {
+  @include tablet {
+    max-width: 90%;
+  }
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}

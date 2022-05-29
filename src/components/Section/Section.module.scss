@@ -1,0 +1,11 @@
+@import 'utils';
+
+.section {
+  margin-top: 40px;
+  @include desktop {
+    margin-top: 70px;
+  }
+}
+.wrapper {
+  margin-top: 60px;
+}

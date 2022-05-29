@@ -1,0 +1,17 @@
+---
+title: Extender interfaz para variables de entorno
+type: typescript
+---
+
+```ts
+// declarations.d.ts
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      DATABASE_URL: string
+      DATABASE_KEY: string
+    }
+  }
+}
+export {}
+```

@@ -1,0 +1,12 @@
+@import 'utils';
+
+.chip {
+  border-radius: $min-radius;
+  width: fit-content;
+  padding: 3px 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}

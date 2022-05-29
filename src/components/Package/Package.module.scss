@@ -1,0 +1,47 @@
+@import 'utils';
+
+.item {
+  width: 100%;
+}
+.head,
+.meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon,
+.name {
+  font-size: 18px;
+  transition: color 0.2s ease-in-out;
+}
+.name {
+  font-weight: 600;
+}
+
+.card {
+  transition: none;
+  border-radius: $min-radius;
+  display: block;
+  padding: 15px;
+  background-color: $background-card;
+  box-shadow: var(--shadow-card);
+  @include transition;
+  &:hover {
+    .name {
+      color: $primary;
+    }
+  }
+}
+.description {
+  margin-top: 5px;
+  line-height: 1.4;
+  @include text-wrap(2);
+}
+
+.version {
+  background-color: $background-chip;
+  border-radius: $min-radius;
+  padding: 2px 5px;
+  font-weight: 600;
+}

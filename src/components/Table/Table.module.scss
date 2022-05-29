@@ -1,0 +1,23 @@
+@import 'utils';
+
+.item {
+  font-size: 18px;
+  display: flex;
+  margin: 5px;
+  .list {
+    margin-left: 25px;
+    border-left: solid 2px $border;
+  }
+}
+.link {
+  text-transform: capitalize;
+  color: $text;
+  font-size: 17px;
+  padding: 6px 8px;
+  border-radius: $min-radius;
+  @include transition;
+  &:hover {
+    color: $primary;
+    background-color: $background-chip;
+  }
+}

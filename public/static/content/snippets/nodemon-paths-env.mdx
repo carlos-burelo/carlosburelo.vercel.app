@@ -1,0 +1,27 @@
+---
+title: Configuration de nodemon, custom paths y env variables
+type: nodemon
+---
+
+```json title="package.json"
+{
+  "scripts": {
+    "dev": "nodemon -q"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.15",
+    "ts-node": "10.4.0",
+    "tsc-alias": "^1.4.2",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.2"
+  }
+}
+```
+
+```json title="nodemon.json"
+{
+  "ext": "ts",
+  "exec": "ts-node -r tsconfig-paths/register --transpile-only -r dotenv/config src/index.ts",
+  "ignore": ["node_modules/*"]
+}
+```

@@ -1,0 +1,39 @@
+@import 'utils';
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+.description {
+  font-size: 20px;
+  line-height: 1.7;
+  display: grid;
+  align-content: center;
+}
+.skills {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 50px;
+  color: $title;
+  transition: color 0.25s ease-in-out;
+  &:hover {
+    color: $primary;
+  }
+}
+.name {
+  font-weight: 500;
+  font-size: 16px;
+  color: $title;
+  text-transform: capitalize;
+  font-weight: 600;
+}

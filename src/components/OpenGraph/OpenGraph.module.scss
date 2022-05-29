@@ -1,0 +1,85 @@
+@import 'utils';
+
+$origin: #5c6675;
+$type: #959da5;
+$title: #2d363e;
+
+.container {
+  width: 1200px;
+  height: 600px;
+  padding: 80px;
+  padding-bottom: 72px;
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  background-color: #fff;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.content {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  gap: 30px;
+}
+.origin {
+  color: $origin;
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 7px;
+}
+.title {
+  font-size: 66px;
+  letter-spacing: -1px;
+  color: $title;
+  @include text-wrap(3);
+  font-weight: bolder;
+  mark {
+    font-weight: 500;
+    color: $type;
+    background-color: transparent;
+  }
+}
+.image {
+  width: 160px;
+  height: 160px;
+}
+.avatar {
+  border-radius: $max-radius;
+}
+.line {
+  height: 24px;
+  background-color: $primary;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.meta {
+  height: 48px;
+}
+.author {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 25px;
+}
+.name,
+.date {
+  margin-top: 8px;
+}
+.date {
+  color: #6e7681;
+}
+
+.details {
+  margin-top: 35px;
+  font-size: 25px;
+  display: flex;
+  gap: 15px;
+  color: #6e7681;
+}
+.light {
+  font-weight: 500;
+}

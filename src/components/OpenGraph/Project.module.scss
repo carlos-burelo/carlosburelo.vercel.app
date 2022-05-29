@@ -1,0 +1,64 @@
+@import 'utils';
+
+$title: #2f363d;
+$description: #6e7681;
+
+.container {
+  display: grid;
+  width: 1200px;
+  height: 600px;
+  padding: 80px;
+  position: relative;
+  background-color: #fff;
+  align-content: space-between;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.content {
+  display: grid;
+  grid-template-columns: 840px 200px;
+}
+.title {
+  font-size: 80px;
+  font-weight: 700;
+  color: $title;
+  display: flex;
+  flex-wrap: wrap;
+}
+.owner {
+  font-weight: 500;
+}
+.name {
+  margin-left: 8px;
+}
+.description {
+  line-height: 1.57;
+  font-size: 31px;
+  margin-top: 32px;
+  letter-spacing: 0.6px;
+  max-width: 95%;
+  color: $description;
+}
+.image {
+  width: 200px;
+  height: 200px;
+  @include center;
+}
+.info {
+  width: 100%;
+}
+.line {
+  height: 25px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  right: 0;
+}
+.ghIcon {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 40px;
+  color: #8492af;
+}

@@ -1,0 +1,60 @@
+---
+title: V-Icons
+tags:
+  - web components
+  - lit
+  - svg icons
+description: Libreria de iconos con logos de tecnologias web en formato SVG.
+image: /static/images/projects/v-icons.webp
+stack:
+  - name: typescript
+    percent: 100
+  - name: lit
+---
+
+V-Icons es una biblioteca en un cdn que propone iconos en formato svg como componentes web reutilizables que a través de un atributo la etiqueta `<v-icon>` devuelve un icono (solo si está disponible)
+
+## Instalación
+
+Si desea utilizar la libreria de iconos, asegúrese de utilizar alguna de las siguientes cdn's dentro de la etiqueta `<head>` en su archivo html
+
+```html
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@carlos-burelo/v-icons@1.0.2/dist/v-icons.es.js"
+></script>
+<script
+  type="module"
+  src="https://unpkg.com/browse/@carlos-burelo/v-icons@1.0.2/dist/v-icons.es.js"
+></script>
+```
+
+## Uso básico
+
+Una vez que se agrega el script en la etiqueta `<head>`, es tan fácil como agregar la etiqueta `<v-icon name="icon-name"> </v-icon>` donde la necesite
+
+```html
+<v-icon name="typescript"></v-icon>
+```
+
+## Personalizando
+
+Al ser un componente web, es tan sencillo como editarlo usando css como si fuera una fuente, como los siguientes ejemplos.
+
+```css
+v-icon {
+  color: blue;
+  font-size: 20px;
+}
+```
+
+También puede especificar el icono a través de su atributo `name`. ejemplo:
+
+```css
+v-icon[name='google'] {
+  color: red;
+  font-size: 20px;
+}
+```
+
+> Próximamente se publicará una documentación/página de inicio para obtener una vista previa de los íconos de una manera mas organizada y facilitar el uso de la biblioteca. :D
