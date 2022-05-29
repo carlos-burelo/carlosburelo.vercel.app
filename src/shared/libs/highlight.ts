@@ -1,4 +1,3 @@
-import { IS_DEV } from '#data/env'
 import { readdirSync } from 'fs'
 import { SerializeOptions } from 'next-mdx-remote/dist/types'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -8,7 +7,8 @@ import remarkGfm from 'remark-gfm'
 import remarkIds from 'remark-heading-id'
 import * as shiki from 'shiki'
 
-export const shikiPath = join(process.cwd(), !IS_DEV ? 'public/assets' : 'assets')
+const IS_ISR = process.env.IS_ISR
+export const shikiPath = join(process.cwd(), IS_ISR ? 'assets' : 'public/assets')
 
 const touched = { current: false }
 
