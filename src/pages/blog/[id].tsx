@@ -42,5 +42,6 @@ export const getStaticProps: GetStaticProps<PostInterface> = async ({
       ...post,
       source: await parseMarkdown(post.content),
     },
+    revalidate: 10,
   }
 }

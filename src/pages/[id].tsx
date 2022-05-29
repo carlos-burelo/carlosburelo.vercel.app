@@ -52,5 +52,6 @@ export const getStaticProps: GetStaticProps<ProjectInterface> = async ({
       ...project,
       source: await parseMarkdown(project.content),
     },
+    revalidate: 10,
   }
 }

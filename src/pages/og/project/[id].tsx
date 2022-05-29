@@ -6,17 +6,20 @@ import { ProjectInterface } from '#types'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
 
-export default function OpenGraphPage({ stack,description, id }: ProjectInterface) {
+export default function OpenGraphPage({
+  stack,
+  description,
+  id,
+}: ProjectInterface) {
   return (
     <div className={_.container}>
       <section className={_.content}>
         <div className={_.info}>
           <h1 className={_.title}>
-            <div className={_.owner}>carlos-burelo/</div>{id}
+            <div className={_.owner}>carlos-burelo/</div>
+            {id}
           </h1>
-          <p className={_.description}>
-            {description}
-          </p> 
+          <p className={_.description}>{description}</p>
         </div>
         <div className={_.image}>
           <Image
@@ -51,5 +54,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       ...project,
     },
+    revalidate: 10,
   }
 }
