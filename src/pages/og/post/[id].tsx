@@ -4,10 +4,19 @@ import Image from 'next/image'
 import { CommentsIcon } from 'shared/data/icons'
 import { getDataFromMdx, getSlugs } from '#libs/mdx'
 import { PostInterface } from '#types'
+import Head from 'next/head'
 
 export default function OpenGraphPage({ title, date }: PostInterface) {
   return (
     <div className={_.container}>
+      <Head>
+        <title>{title}</title>
+        <link
+          rel='shortcut icon'
+          href='/images/logo.svg'
+          type='image/svg+xml'
+        />
+      </Head>
       <section className={_.content}>
         <div className={_.info}>
           <h2 className={_.origin}>carlos-burelo/web</h2>

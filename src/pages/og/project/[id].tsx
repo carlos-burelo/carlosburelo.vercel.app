@@ -4,15 +4,25 @@ import { GitHubIcon } from '#data/icons'
 import { getDataFromMdx, getSlugs } from '#libs/mdx'
 import { ProjectInterface } from '#types'
 import type { GetStaticPaths, GetStaticProps } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
 
 export default function OpenGraphPage({
   stack,
   description,
   id,
+  name,
 }: ProjectInterface) {
   return (
     <div className={_.container}>
+      <Head>
+        <title>{name}</title>
+        <link
+          rel='shortcut icon'
+          href='/images/logo.svg'
+          type='image/svg+xml'
+        />
+      </Head>
       <section className={_.content}>
         <div className={_.info}>
           <h1 className={_.title}>

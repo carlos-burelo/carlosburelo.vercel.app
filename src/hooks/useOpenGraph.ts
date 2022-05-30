@@ -8,6 +8,6 @@ export default function useOpenGraph(type: "project" | "post") {
   const searchParams = new URLSearchParams()
   const path = `${url.origin}/og/${type}/${url.pathname.split("/").pop()}`
   searchParams.set("path", path)
-  const fullImageURL = getAbsoluteURL(`/api/open-graph?${searchParams}`)
+  const fullImageURL = getAbsoluteURL(`/api/og?${searchParams}`)
   return { ogImage: fullImageURL }
 }
