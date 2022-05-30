@@ -2,6 +2,9 @@
 
 .item {
   display: flex;
+  @include mobile {
+    width: 100%;
+  }
 }
 .link {
   padding: 8px 10px;
@@ -16,5 +19,9 @@
   &.active {
     color: $title;
     font-weight: 600;
+  }
+  @include mobile {
+    padding: 15px 10px;
+    width: 100%;
   }
 }
