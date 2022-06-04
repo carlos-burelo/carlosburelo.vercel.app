@@ -8,7 +8,6 @@ export interface SEOProps {
 export interface SeoMap {
   [key: string]: SEOProps
 }
-
 interface PostInterface {
   id: string
   title: string
@@ -25,19 +24,16 @@ interface SnippetInterface {
   description: string
   content: string
 }
-
 interface PackageInterface {
   name: string
   description: string
   version: string
   url: string
 }
-
 interface Stack {
   name: string
   percent?: number
 }
-
 interface ProjectInterface {
   id: string
   name: string

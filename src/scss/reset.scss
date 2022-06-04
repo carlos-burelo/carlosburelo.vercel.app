@@ -1,17 +1,13 @@
 @font-face {
-  font-family: 'Alliance';
-  src: url(/fonts/alliance.woff2) format('woff2');
-  font-weight: 500;
+  font-family: 'IBM';
+  src: url(/fonts/ibm.woff2) format('woff2');
+  font-weight: 100 900;
 }
 @font-face {
-  font-family: 'Alliance';
-  src: url(/fonts/alliance-semi.woff2) format('woff2');
-  font-weight: 600;
-}
-@font-face {
-  font-family: 'Alliance';
-  src: url(/fonts/alliance-bold.woff2) format('woff2');
-  font-weight: 700;
+  font-family: 'IBM';
+  font-style: italic;
+  src: url(/fonts/ibm-italic.woff2) format('woff2');
+  font-weight: 100 900;
 }
 
 @font-face {
@@ -25,7 +21,7 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
-  font-family: 'Alliance', sans-serif;
+  font-family: 'IBM', sans-serif;
 }
 html {
   scroll-behavior: smooth;

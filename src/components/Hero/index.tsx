@@ -18,7 +18,7 @@ export default function Hero({}: HeroProps) {
         />
       </div>
       <div className={_.about}>
-        <h2 className={_.say}>Hi, i&#39;m</h2>
+        <h2 className={_.say}>Hola, soy</h2>
         <h1 className={_.name}>
           <mark>Carlos </mark>
           Burelo

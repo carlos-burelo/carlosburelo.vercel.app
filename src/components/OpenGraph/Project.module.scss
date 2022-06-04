@@ -2,6 +2,21 @@
 
 $title: #2f363d;
 $description: #6e7681;
+@font-face {
+  font-family: 'Alliance';
+  src: url(/fonts/alliance.woff2) format('woff2');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Alliance';
+  src: url(/fonts/alliance-semi.woff2) format('woff2');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Alliance';
+  src: url(/fonts/alliance-bold.woff2) format('woff2');
+  font-weight: 700;
+}
 
 .container {
   display: grid;

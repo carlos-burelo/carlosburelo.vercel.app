@@ -44,3 +44,15 @@
     display: none;
   }
 }
+.theme {
+  color: $text;
+  background-color: $background-card;
+  border: solid 2px $border;
+  font-size: 15px;
+  padding: 8px;
+  @include transition(border);
+  &:hover {
+    background-color: $background-card;
+    border: solid 2px $primary;
+  }
+}
