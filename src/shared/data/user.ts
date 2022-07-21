@@ -17,6 +17,13 @@ export const skills = [
 export const experience = [
   {
     year: 2022,
+    title: 'Practicante de laboratorio de electronica',
+    image: '/images/inge.webp',
+    description:
+      'Inicio como practicante en el laboratorio de electronica de mi universidad para profundizar mi curiosidad sobre el hardware.',
+  },
+  {
+    year: 2022,
     title: 'Jefe de Desarrollo Web en el GSDC UJAT',
     image: '/images/gdsc.webp',
     description:
@@ -28,7 +35,7 @@ export const experience = [
       'Inicio de estudios superiores en la Universidad de Juárez Autónoma de Tabasco',
     image: '/images/ujat.webp',
     description:
-      'Inicio mis estudios superiores en la universidad opara mejorar mis habilidades y entendimiento de la programacion a bajo nivel.',
+      'Inicio mis estudios superiores en la universidad para mejorar mis habilidades y entendimiento de la programacion a bajo nivel.',
   },
   {
     year: 2021,

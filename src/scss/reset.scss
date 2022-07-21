@@ -1,10 +1,13 @@
 @font-face {
   font-family: 'IBM';
+  font-display: swap;
   src: url(/fonts/ibm.woff2) format('woff2');
   font-weight: 100 900;
 }
+
 @font-face {
   font-family: 'IBM';
+  font-display: swap;
   font-style: italic;
   src: url(/fonts/ibm-italic.woff2) format('woff2');
   font-weight: 100 900;
@@ -12,6 +15,7 @@
 
 @font-face {
   font-family: 'Code';
+  font-display: swap;
   src: url(/fonts/code.woff2) format('woff2');
   font-weight: normal;
 }
@@ -23,27 +27,34 @@
   -webkit-tap-highlight-color: transparent;
   font-family: 'IBM', sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
   line-height: 1;
 }
+
 time {
   line-height: 1;
 }
+
 svg {
   width: 1.25em;
   height: 1.25em;
   fill: currentColor;
 }
+
 mark {
   background-color: transparent;
 }
+
 input {
   display: block;
   outline: none;
@@ -53,4 +64,9 @@ input {
   height: 100%;
   font-weight: 500;
   transition: 0.2s ease-in-out border-color;
+}
+
+img {
+  max-width: 100% !important;
+  width: 100% !important;
 }

@@ -1,0 +1,25 @@
+[
+  { "#": "Motivaciones" },
+  { "#": "Instalación" },
+  {
+    "#": "Ejemplos",
+    "+": [
+      { "#": "Javascript" },
+      { "#": "Typescript" },
+      { "#": "Terminal" },
+      { "#": "Texto plano" }
+    ]
+  },
+  {
+    "#": "Api",
+    "+": [
+      { "#": "Directive" },
+      { "#": "Name" },
+      { "#": "Input" },
+      { "#": "Children" },
+      { "#": "Flags" },
+      { "#": "Parser" }
+    ]
+  },
+  { "#": "Limitaciones" }
+]

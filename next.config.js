@@ -10,5 +10,5 @@ const nextConfig = {
     domains: ['media.graphassets.com'],
   },
 }
-console.log(process.env)
+
 module.exports = nextConfig

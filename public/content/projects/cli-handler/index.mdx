@@ -1,0 +1,84 @@
+---
+name: CLI Handler
+tags:
+  - cli
+  - command line parser
+  - handlers
+description: Parser de argumentos de linea de comandos con funciones desencadenadas.
+package:
+  version: 1.0.0
+  url: https://npmjs.com/package/cli-handler
+image: /static/images/projects/cli-handler.webp
+stack:
+  - name: typescript
+    percent: 100
+---
+
+# 📖 Introducción
+
+CLI Handler es una librería que permite parsear los argumentos de linea de comandos que recibe una funcion que se ejecuta cuando los argumentos son correctos similar a un gestor de eventos, de ahi que se le llama handler.
+
+# 💫 Proposito
+
+- Parsear los argumentos de linea de comandos
+- Ejecutar una funcion cuando los argumentos son correctos
+- Reducir el boilerplate de la aplicacion
+- Tener una API simple y práctica.
+
+# 📚 Documentación
+
+Al igual que en el resto de librerías, la documentación de CLI Handler está en [GitHub](https://github.com/carlos-burelo/cli-handler), pero en este blog está una versión más actualizada y en español.
+
+# 📝 Ejemplos
+
+```ts title="using-typescript.ts"
+import { parse, Directive } from 'cli-handler'
+
+const args: Directive[] = [
+  {
+    path: 'g|generate',
+    children: [
+      {
+        path: 'c|component',
+        handler: (value, flags) => {
+          console.log(`generating component ${value}`)
+          console.log('with following flags:', flags)
+        },
+      },
+    ],
+  },
+]
+
+parse(args)
+```
+
+Hasta este punto te estaras preguntando que hace la función `parse`, que es un `handler` y cuales son los argumentos que se le pasan a la función, pero estas son preguntas que se pueden resolver facilmente...
+
+### `parse()`
+
+La funcion parse es el handler que se ejecuta para iniciar el proceso de analisis de los argumentos de linea de comandos que ingrese el usuario, es decir, una funcio que espera a que el usuario le ingrese algun valor para poder evaluar si los datos son validos o no.
+
+### `handler()`
+
+Un handler no es mas que una funcion que se desencadenada cuando los argumentos de ese caso en concreto son correctos y ejecuta un serie de instrucciones que defina el usuario.
+
+# 🧪 Ejemplo de uso
+
+Siendo una aplicacion de generacion de componentes, podemos usar CLI Handler para parsear los argumentos de linea de comandos que recibe la aplicacion y ejecutar una funcion cuando los argumentos son correctos y asi generar el componente.
+
+```bash title="input"
+$ example-bin generate component MyComponent --styles --template my-template
+
+# otra forma de escribir...
+$ example-bin g c MyComponent --styles --template my-template
+```
+
+Internamente CLI Handler ejecuta la funcion `handler` que se le pasa como argumento, y esta funcion se encarga de parsear los argumentos de linea de comandos y ejecutar una funcion que se le pasa como argumento, es decir, evalua cual de todos los casos declarados en el arreglo se ha cumplido y ejecuta su propio handler y a su ves este recibe parametros que son los argumentos que se le pasan a la funcion y se ven de forma similar a un evento.
+
+```bash title="output"
+{
+  value: 'MyComponent',
+  styles: true,
+  template: 'my-template',
+}
+```

@@ -9,10 +9,11 @@ import { ProjectInterface } from '#types'
 import useOpenGraph from '#hooks/useOpenGraph'
 import _ from '#components/Pages/Project.module.scss'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { Table } from '../shared/types'
 
 interface PostProps extends ProjectInterface {
   source: MDXRemoteSerializeResult
-  table: string[][]
+  table: Table
 }
 
 export default function ProjectPage({
@@ -40,7 +41,7 @@ export default function ProjectPage({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs('projects')
-  return { paths, fallback: 'blocking' }
+  return { paths, fallback: false }
 }
 export const getStaticProps: GetStaticProps<ProjectInterface> = async ({
   params,
@@ -52,6 +53,5 @@ export const getStaticProps: GetStaticProps<ProjectInterface> = async ({
       ...project,
       source: await parseMarkdown(project.content),
     },
-    revalidate: 10,
   }
 }

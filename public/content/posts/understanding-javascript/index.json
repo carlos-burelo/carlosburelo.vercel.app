@@ -1,0 +1,18 @@
+[
+  { "#": "Introducción" },
+  {
+    "#": "Características",
+    "+": [
+      { "#": "Scope" },
+      { "#": "Mutación" },
+      {
+        "#": "Funciones",
+        "+": [{ "#": "Nombres" }, { "#": "Parametros" }]
+      },
+      { "#": "Callbacks" },
+      { "#": "Promesas" },
+      { "#": "Async/Await" },
+      { "#": "Notas finales" }
+    ]
+  }
+]

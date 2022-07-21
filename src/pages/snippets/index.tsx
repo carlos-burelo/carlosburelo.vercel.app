@@ -5,20 +5,26 @@ import _ from '#components/Snippet/Snippet.module.scss'
 import { getMetaDataFromFiles } from '#libs/mdx'
 import { SnippetInterface } from '#types'
 import type { GetStaticProps, NextPage } from 'next'
+import { useState } from 'react'
 
 interface Props {
   snippets: SnippetInterface[]
 }
 
 const Snippets: NextPage<Props> = ({ snippets }) => {
+  const [results, setResults] = useState(snippets)
   return (
     <Layout>
       <div className={_.head}>
         <h1 className={_.titleSection}>Snippets</h1>
-        <Search placeholder='Buscar snippet' />
+        <Search
+          raw={snippets}
+          onSearch={setResults}
+          placeholder='Buscar snippet'
+        />
       </div>
       <div className={_.snippets}>
-        {snippets.map(snippet => (
+        {results.map(snippet => (
           <SnippetCard {...snippet} key={snippet.id} />
         ))}
       </div>
@@ -29,7 +35,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const snippets = getMetaDataFromFiles('snippets')
   return {
     props: { snippets },
-    revalidate: 10,
   }
 }
 

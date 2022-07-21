@@ -8,7 +8,10 @@ import remarkIds from 'remark-heading-id'
 import * as shiki from 'shiki'
 
 const IS_ISR = process.env.IS_ISR
-export const shikiPath = join(process.cwd(), IS_ISR ? 'assets' : 'public/assets')
+export const shikiPath = join(
+  process.cwd(),
+  IS_ISR ? 'assets' : 'public/assets'
+)
 
 const touched = { current: false }
 

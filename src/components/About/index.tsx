@@ -1,6 +1,6 @@
 import _ from './About.module.scss'
 import Image from 'next/image'
-import Button from '#components/Buttons'
+import Button from '#components/Button'
 import Section from '#components/Section'
 
 interface AboutProps {}
@@ -33,7 +33,7 @@ export default function About({}: AboutProps) {
           <div className={_.buttons}>
             <Button style='default'>Descargar CV</Button>
             <Button style='translucent' to='/projects'>
-              Ver trabajos
+              Ver proyectos
             </Button>
           </div>
         </div>

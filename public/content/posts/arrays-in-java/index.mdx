@@ -1,0 +1,107 @@
+---
+title: Como funcionan los arreglos en Java?
+tags:
+  - javascript
+  - java
+  - matrices
+  - arreglos
+date: 2022-06-07
+image: /images/hero.webp
+---
+
+# Introducción
+
+Este post es un breve repaso por lo que son las estructuras compuestas de otros tipos de datos, es decir, matrices y arreglos.👾
+
+## Que es un arreglo? #[Que es un arreglo]
+
+Un arreglo es una colección de datos que se pueden acceder a través de un índice. Viéndolo de una manera mas simple, podemos ver a los arreglos como listas de datos que se pueden acceder a través de su posición.
+
+![Matriz](/content/posts/arrays-in-java/explain.png)
+
+Como podemos observar, dentro de una sola variable estamos almacenando una cantidad variable de datos como si de una lista se tratara, en base a esto podemos acceder a cada uno de los datos de la lista a través de su posición.
+
+Las posiciones podemos considerarlas como un indice de un libro, que hace referencia a la ubicación de una pagina dentro de un libro, pero en este caso, el indice es un numero que nos dice en que lugar guardamos un dato, en java tenemos 2 tipos de arreglos, los simples y los multidimensionales.
+
+### Arreglos simples
+
+Los arreglos simples son aquellos que no tienen una dimension mayor a 1, es decir, no tienen sub-elementos o también llamados elementos hijos, como los arreglos de una matriz, por ejemplo.
+
+```java
+// Creación de un arreglo de enteros con 5 elementos
+int[] numeros = new int[5];
+
+// Asignación de valores a los elementos del arreglo de forma manual
+
+numeros[0] = 1;
+numeros[1] = 2;
+numeros[2] = 3;
+numeros[3] = 4;
+numeros[4] = 5;
+
+// Asignación de valores a los elementos del arreglo de forma estática
+
+int[] numeros = {1, 2, 3, 4, 5};
+
+// Asignación de valores a los elementos del arreglo de forma dinámica
+
+for (int i = 0; i < numeros.length; i++) {
+  numeros[i] = i; // el valor de i se añade a la posición que le corresponde
+}
+// como resultado obtenemos un arreglo con los valores de 1 a 5 que se ve
+// de esta manera:
+// {1, 2, 3, 4, 5}
+```
+
+### Arreglos multidimensionales
+
+Los arreglos multidimensionales no son mas que arreglos simples con otros arreglos simples adentro, como se ve en el siguiente ejemplo:
+
+```java
+// Creación de un arreglo de flotantes con 5 elementos
+// y cada uno de ellos con 5 elementos hijos
+float[][] numeros = new float[5][5];
+
+// Asignación de valores a los elementos del arreglo de forma manual
+
+numeros[0][0] = 0.1;
+numeros[0][1] = 0.2;
+numeros[0][2] = 0.3;
+numeros[0][3] = 0.4;
+numeros[0][4] = 0.5;
+numeros[1][0] = 1.1;
+numeros[1][1] = 1.2;
+...
+```
+
+Como podemos observar, la forma de asignar valores de forma manual es algo diferente al ejemplo anterior, ya que en este caso, los valores se asignan a los elementos hijo y no a los elementos padre, asi que una forma gráfica de ver los arreglos multidimensionales es la siguiente:
+
+![Matriz](/content/posts/arrays-in-java/matriz.png)
+
+De esta forma debemos tener a consideración que el arreglo multidimensional o matriz es un arreglo con arreglos anidados, asi que si queremos acceder a un elemento hijo de una matriz, primero debemos acceder al indice del elemento padre y luego al indice del elemento hijo, es por esa la razón por la cual se utilizan los corchetes para acceder a la posición de un elemento, si fuera un arreglo de 3 niveles de anidación, la manera de acceder a los últimos elementos seria:
+
+```java
+// acceso a los últimos elementos
+String[][][] indice = new String[1][1][1];
+// declaramos una matiz de 3 dimensiones o
+// arreglo de 3 niveles de anidación y le asignamos un
+// solo espacio para cada sub-arreglo.
+// visualmente se vería de esta forma:
+/**
+{ // primer nivel
+  { // segundo nivel
+    { // tercer nivel
+      "hello world" // elemento
+    }
+  }
+}
+*/
+
+// y la manera de asignar valores a los elementos de
+// esta matriz es de la siguiente forma:
+indice[0][0][0] = "hello world";
+```
+
+## Notas finales
+
+De esta forma podemos entender de forma simple que es un arreglo y que es una matriz o arreglos multidimensional considerando que el segundo es lo mismo que el primero, pero con otros arreglos adentro.👽

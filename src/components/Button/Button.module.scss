@@ -1,0 +1,20 @@
+@import 'utils';
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: background 400ms;
+  padding: 10px 14px;
+  border-radius: $min-radius;
+}
+
+.translucent {
+  color: $primary;
+  background: $background-chip;
+  border: solid 1px $background-chip;
+  @include transition(border);
+
+  &:hover {
+    border: solid 1px $primary;
+  }
+}

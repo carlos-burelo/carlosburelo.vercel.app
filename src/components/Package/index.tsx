@@ -1,5 +1,5 @@
 import { Npm } from '#data/logos'
-import { PackageInterface } from '#types'
+import { PackageProps } from '#types'
 import Link from 'next/link'
 import _ from './Package.module.scss'
 
@@ -8,7 +8,7 @@ export default function PackageItem({
   url,
   version,
   description,
-}: PackageInterface) {
+}: PackageProps & { description: string; name: string }) {
   return (
     <li className={_.item}>
       <Link href={url}>

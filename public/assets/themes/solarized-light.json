@@ -91,7 +91,10 @@
     },
     {
       "name": "Embedded code markers",
-      "scope": ["punctuation.section.embedded.begin", "punctuation.section.embedded.end"],
+      "scope": [
+        "punctuation.section.embedded.begin",
+        "punctuation.section.embedded.end"
+      ],
       "settings": {
         "foreground": "#D30102"
       }
@@ -136,7 +139,10 @@
     },
     {
       "name": "Tag start/end",
-      "scope": ["punctuation.definition.tag.begin", "punctuation.definition.tag.end"],
+      "scope": [
+        "punctuation.definition.tag.begin",
+        "punctuation.definition.tag.end"
+      ],
       "settings": {
         "foreground": "#93A1A1"
       }

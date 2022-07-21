@@ -1,18 +1,18 @@
 import Image from 'next/image'
 import _ from './Img.module.scss'
 
-interface ImgProps {
-  src: string
-  alt: string
-  width?: string
-  height?: string
-  title?: string
-  fit?: 'cover' | 'contain'
-  layout?: 'responsive' | 'fixed' | 'fill'
-  full?: boolean
-}
+// interface ImgProps {
+//   src: string
+//   alt: string
+//   width?: string
+//   height?: string
+//   title?: string
+//   fit?: 'cover' | 'contain'
+//   layout?: 'responsive' | 'fixed' | 'fill'
+//   full?: boolean
+// }
 
-export const Img = ($props: ImgProps) => {
+export const Img = ($props: any) => {
   const {
     src,
     alt = 'Image placeholder',
@@ -22,6 +22,7 @@ export const Img = ($props: ImgProps) => {
     width = 600,
     height = 400,
     layout = 'fixed',
+    noSizes = false,
   } = $props
   const url = src.includes('://')
     ? `/api/proxy?url=${encodeURIComponent(src)}`
@@ -30,11 +31,10 @@ export const Img = ($props: ImgProps) => {
     src: url,
     alt: 'Image placeholder',
     title,
-    width,
-    height,
     layout,
     objectFit: fit,
-    ...(full && { width: 100, height: 500 }),
+    ...(!noSizes && { width, height }),
+    ...(full && { layout: 'responsive' }),
   }
   return (
     <Image

@@ -33,7 +33,7 @@ export default function SnippetPage({ source, title, description }: PostProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs('snippets')
-  return { paths, fallback: 'blocking' }
+  return { paths, fallback: false }
 }
 export const getStaticProps: GetStaticProps<PostInterface> = async ({
   params,
@@ -45,6 +45,5 @@ export const getStaticProps: GetStaticProps<PostInterface> = async ({
       ...snippet,
       source: await parseMarkdown(snippet.content),
     },
-    revalidate: 10,
   }
 }

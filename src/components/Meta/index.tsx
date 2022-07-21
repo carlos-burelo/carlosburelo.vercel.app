@@ -8,7 +8,7 @@ export default function Meta({ data }: MetaProps) {
   return (
     <Head>
       <title>{data.title}</title>
-      <link rel='shortcut icon' href='/images/logo.svg' type='image/svg+xml' />
+
       <meta name='description' content={data.description} />
       <meta name='keywords' content={data.keywords} />
       <meta property='og:title' content={data.title} />

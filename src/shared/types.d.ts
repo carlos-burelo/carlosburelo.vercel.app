@@ -24,9 +24,10 @@ interface SnippetInterface {
   description: string
   content: string
 }
-interface PackageInterface {
-  name: string
-  description: string
+interface PackageInterface extends ProjectInterface {
+  package?: PackageProps
+}
+export interface PackageProps {
   version: string
   url: string
 }
@@ -43,4 +44,14 @@ interface ProjectInterface {
   image: string
   stack: Stack[]
   content: string
+}
+export type TableRow = {
+  '#': string
+  '+'?: Table
+}
+
+export type Table = TableRow[]
+
+export interface TableProps {
+  data: Table
 }

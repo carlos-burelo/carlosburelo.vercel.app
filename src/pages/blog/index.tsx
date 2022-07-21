@@ -4,23 +4,29 @@ import Section from '#components/Section'
 import _ from '#components/Blog/index.module.scss'
 import type { GetStaticProps, NextPage } from 'next'
 import PostItem from '#components/Post'
-import { getMetaDataFromFiles, getMetaDataFromJson } from '#libs/mdx'
-import { PackageInterface, PostInterface } from '#types'
+import { getDependecies, getMetaDataFromFiles } from '#libs/mdx'
+import { PackageInterface, PackageProps, PostInterface } from '#types'
 import PackageItem from '#components/Package'
 import Subtitle from '#components/Subtitle'
+import { useState } from 'react'
 
 interface Props {
   posts: PostInterface[]
   packages: PackageInterface[]
 }
 const Blog: NextPage<Props> = ({ posts, packages }) => {
+  const [results, setResults] = useState(posts)
   return (
     <Layout>
       <div className={_.container}>
         <Section name='Blog' className={_.blog}>
-          <Search placeholder='Buscar publicacion' />
+          <Search
+            raw={posts}
+            onSearch={setResults}
+            placeholder='Buscar publicacion'
+          />
           <div className={_.posts}>
-            {posts.map((post, index: number) => (
+            {results.map((post, index: number) => (
               <PostItem {...post} key={index} />
             ))}
           </div>
@@ -29,7 +35,14 @@ const Blog: NextPage<Props> = ({ posts, packages }) => {
           <Subtitle text='Paquetes' />
           <div className={_.packages}>
             {packages.map((pkg, index: number) => (
-              <PackageItem {...pkg} key={index} />
+              <PackageItem
+                description={pkg.description}
+                name={pkg.name}
+                version={pkg.package?.version as string}
+                url={pkg.package?.url as string}
+                key={index}
+                // {...(pkg.package as PackageProps)}
+              />
             ))}
           </div>
         </div>
@@ -40,7 +53,7 @@ const Blog: NextPage<Props> = ({ posts, packages }) => {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const posts = getMetaDataFromFiles('posts')
-  const packages = getMetaDataFromJson()
+  const packages = getDependecies()
   return {
     props: {
       posts,

@@ -1,4 +1,5 @@
 @import 'utils';
+
 .navbar {
   @include space-between;
   padding: var(--padding-container);
@@ -8,8 +9,10 @@
   background-color: $background;
   z-index: $z-navbar;
 }
+
 .list {
   @include flex;
+
   @include mobile {
     display: none;
     padding: 10px;
@@ -22,37 +25,42 @@
     background-color: $background;
     width: 100%;
   }
+
   &.open {
     display: flex !important;
   }
 }
+
 .ctrls {
   display: flex;
   gap: 15px;
+
   @include mobile {
     width: 100%;
     justify-content: space-between;
   }
 }
+
 .menu,
 .theme {
   padding: 10px;
   @include center;
 }
+
 .menu {
   @include desktop {
     display: none;
   }
 }
+
 .theme {
   color: $text;
-  background-color: $background-card;
-  border: solid 2px $border;
+  border: solid 1px $border;
   font-size: 15px;
   padding: 8px;
   @include transition(border);
+
   &:hover {
-    background-color: $background-card;
-    border: solid 2px $primary;
+    background-color: $background-hover;
   }
 }

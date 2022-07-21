@@ -7,10 +7,11 @@ import Content from '#components/Content'
 import { PostInterface } from '#types'
 import useOpenGraph from '#hooks/useOpenGraph'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { Table } from '#types'
 
 interface PostProps extends PostInterface {
   source: MDXRemoteSerializeResult
-  table: string[][]
+  table: Table
 }
 
 export default function PostPage({ source, table, ...props }: PostProps) {
@@ -30,7 +31,7 @@ export default function PostPage({ source, table, ...props }: PostProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs('posts')
-  return { paths, fallback: 'blocking' }
+  return { paths, fallback: false }
 }
 export const getStaticProps: GetStaticProps<PostInterface> = async ({
   params,
@@ -42,6 +43,5 @@ export const getStaticProps: GetStaticProps<PostInterface> = async ({
       ...post,
       source: await parseMarkdown(post.content),
     },
-    revalidate: 10,
   }
 }

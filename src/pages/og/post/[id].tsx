@@ -68,7 +68,7 @@ export default function OpenGraphPage({ title, date }: PostInterface) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs('posts')
-  return { paths, fallback: 'blocking' }
+  return { paths, fallback: false }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { id } = params as { id: string }
@@ -77,6 +77,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       ...project,
     },
-    revalidate: 10,
   }
 }

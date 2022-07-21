@@ -1,7 +1,8 @@
-import { shikiPath } from "#libs/highlight"
+import { shikiPath } from '#libs/highlight'
 
 export const IS_DEV = process.env.NODE_ENV === 'development'
-export const EDGE_PATH = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
+export const EDGE_PATH =
+  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
 
 export const logger = () => {
   console.log('#########################################################')

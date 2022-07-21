@@ -1,9 +1,11 @@
 @import 'utils';
+
 .head {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .timeLine {
   --margin: 16px;
   --height: 160px;
@@ -12,6 +14,7 @@
   display: grid;
   gap: 10px;
   margin-left: 15px;
+
   &::before {
     content: '';
     position: absolute;
@@ -24,8 +27,10 @@
     transform: translateY(-50%);
     height: calc(100% - var(--height));
   }
+
   @include tablet {
     margin-left: 0px;
+
     &::before {
       top: calc(var(--height) / 2);
       left: calc(50%);
@@ -37,10 +42,10 @@
 .item {
   position: relative;
   padding: 15px;
-  background-color: $background-card;
-  box-shadow: var(--card-shadow);
+  border: solid 1px $border;
   border-radius: $min-radius;
   min-height: 140px;
+
   &::after {
     content: '';
     position: absolute;
@@ -52,8 +57,10 @@
     left: var(--odd-dot);
     border-radius: 50%;
   }
+
   @include tablet {
     width: 49%;
+
     .head .date {
       position: absolute;
       background-color: $background-selection;
@@ -62,16 +69,20 @@
       top: 50%;
       transform: translateY(-50%);
     }
+
     &:nth-child(even) {
       margin-left: auto;
+
       .head .date {
         left: -100px;
       }
     }
+
     &:nth-child(odd) {
       .head .date {
         right: -100px;
       }
+
       &::after {
         right: var(--odd-dot);
         left: inherit;
@@ -79,18 +90,21 @@
     }
   }
 }
+
 .title {
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: 700;
   @include text-wrap(2);
 }
+
 .date {
   color: $primary;
   line-height: 1;
   padding: 5px 2px;
   font-size: 19px;
 }
+
 .content {
   @include text-wrap(2);
   line-height: 1.6;

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://carlosburelo.vercel.app/sitemap.xml

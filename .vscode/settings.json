@@ -1,7 +1,14 @@
 {
   "cSpell.enableFiletypes": ["!scss", "!typescript", "mdx"],
   "cSpell.language": "en,es",
-  "cSpell.words": ["webp"],
+  "cSpell.words": [
+    "destructuracion",
+    "dictive",
+    "multidimensionales",
+    "numeros",
+    "reactividad",
+    "webp"
+  ],
   "files.exclude": {
     // ".old": true,
     "node_modules": true,

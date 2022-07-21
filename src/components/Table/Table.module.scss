@@ -2,22 +2,35 @@
 
 .item {
   font-size: 18px;
-  display: flex;
-  margin: 5px;
+  margin: 7px 5px;
+
   .list {
-    margin-left: 25px;
-    border-left: solid 2px $border;
+    margin-left: 15px;
+    border-left: solid 1px $border;
   }
 }
+
+.nest {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .link {
-  text-transform: capitalize;
   color: $text;
   font-size: 17px;
   padding: 6px 8px;
   border-radius: $min-radius;
   @include transition;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
   &:hover {
-    color: $primary;
-    background-color: $background-chip;
+    color: $title;
+    background-color: $background-hover;
   }
 }

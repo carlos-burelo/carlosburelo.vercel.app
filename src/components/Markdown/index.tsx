@@ -1,4 +1,4 @@
-import { Heading } from '#components/MDX'
+import { Heading, Img } from '#components/MDX'
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote'
 import _ from './Markdown.module.scss'
 
@@ -10,6 +10,8 @@ const components: MDXRemoteProps['components'] = {
   h1: props => Heading(props, 'h1'),
   h2: props => Heading(props, 'h2'),
   h3: props => Heading(props, 'h3'),
+  // img: Img,
+  Img,
 }
 export default function Markdown({ source }: MarkdownProps) {
   return (

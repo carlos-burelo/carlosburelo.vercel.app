@@ -1,4 +1,4 @@
-import Button from '#components/Buttons'
+import Button from '#components/Button'
 import NavLink from '#components/NavLink'
 import { MenuIcon, MoonIcon } from '#data/icons'
 import { useState } from 'react'

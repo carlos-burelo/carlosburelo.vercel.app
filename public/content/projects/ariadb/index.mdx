@@ -1,0 +1,146 @@
+---
+name: AriaDB
+tags:
+  - typescript
+  - nodejs
+description: Base de datos miniatura basada en un archivo json con una API sencilla y minimalista para una facil administracion de los datos.
+image: /static/images/projects/ariadb.webp
+package:
+  version: 1.0.0
+  url: https://npmjs.com/package/ariadb
+stack:
+  - name: typescript
+    percent: 100
+---
+
+AriaDB es un administrador de base de datos basado en un archivo JSON con una API minimalista con métodos útiles para administrar información de manera simple.
+
+## Características #[details]
+
+- **Simple**: Es fácil de usar y entender.
+- **Ligero**: Es muy ligero y rápido.
+- **Seguro**: Es seguro y fácil de usar.
+- **Potente**: Es potente y fácil de usar.
+- **Código abierto**: es de código abierto y de uso gratuito.
+
+## Instalación #[install]
+
+- Descarga la última versión de la fuente desde [GitHub](https://gihub.com/carlos-burelo/AriaDB).
+
+```bash
+# instalar usando npm
+npm install ariadb
+
+# instalar usando yarn
+yarn add ariadb
+```
+
+## Uso #[usage]
+
+Para usar AriaDB simplemente necesitamos crear una instancia de la clase AriaDB que se exporta por defecto desde 'ariadb'
+
+```js title="index.ts"
+import AriaDB from 'ariadb'
+
+const db = new AriaDB('path/of/db.json')
+
+db.set('user.name', 'Jhon')
+const userName = db.get('user.name')
+console.log(userName) // Jhon
+```
+
+### Por ejemplo...
+
+```json title="db.json"
+{
+  "user": {
+    "name": "Jhon",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "isActive": true
+  }
+}
+```
+
+# API
+
+| Método   | Descripción                                         | Valor que retorna |
+| -------- | --------------------------------------------------- | ----------------- |
+| `.get()` | Obtiene el valor de una propiedad dentro del objeto | _Custom_          |
+
+```ts
+db.get('user.name')
+```
+
+| Método   | Descripción                                             | Valor que retorna |
+| -------- | ------------------------------------------------------- | ----------------- |
+| `.set()` | Establece un valor en el objeto, si no existe, crea uno | _undefined_       |
+
+```ts
+db.set('user.name', 'Jhon')
+```
+
+| Método      | Descripción                                                    | Valor que retorna |
+| ----------- | -------------------------------------------------------------- | ----------------- |
+| `.remove()` | Borra una propiedad dentro de un arreglo basandose en un match | _undefined_       |
+
+```ts
+db.remove('user.name')
+```
+
+| Método      | Descripción                             | Valor que retorna |
+| ----------- | --------------------------------------- | ----------------- |
+| `.delete()` | Borra una propiedad dentro de un objeto | _undefined_       |
+
+```ts
+db.delete('user.name')
+```
+
+| Método    | Descripción                            | Valor que retorna |
+| --------- | -------------------------------------- | ----------------- |
+| `.push()` | Agrega un nuevo elemento a aun arreglo | _undefined_       |
+
+```ts
+db.push('user.skills', 'typescript')
+```
+
+| Método   | Descripción                                           | Valor que retorna |
+| -------- | ----------------------------------------------------- | ----------------- |
+| `.has()` | Comprueba la existencia de una propiedad en el objeto | _boolean_         |
+
+```ts
+db.has('user.name')
+```
+
+| Método     | Descripción                                    | Valor que retorna |
+| ---------- | ---------------------------------------------- | ----------------- |
+| `.query()` | Obtiene las propiedades solicitadas del objeto | _Custom_          |
+
+```ts
+db.query('user', ['name', 'skills'])
+```
+
+| Método      | Descripción                                                            | Valor que retorna |
+| ----------- | ---------------------------------------------------------------------- | ----------------- |
+| `.toggle()` | Invierte el valor de una propiedad booleana o la establece manualmente | _boolean_         |
+
+```ts
+db.toggle('user.isActive')
+// o forzar el valor
+db.toggle('user.isActive', true)
+```
+
+Una API para obtener información de la pagina [monoschinos2.com](https://monoschinos2.com) en formato API-REST escrita en Typescript.
+
+# Endpoints
+
+- [x] **lastest**
+
+```ts
+interface LastestEpisode {
+  id: string
+  title: string
+  image: string
+  type: string
+  no: number
+}
+```

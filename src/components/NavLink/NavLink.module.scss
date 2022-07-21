@@ -2,24 +2,29 @@
 
 .item {
   display: flex;
+
   @include mobile {
     width: 100%;
   }
 }
+
 .link {
   padding: 8px 10px;
-  color: $subtitle;
+  color: $text;
   font-size: 15px;
   border-radius: $min-radius;
   @include transition;
+
   &:hover {
     color: $title;
     background-color: $background-hover;
   }
+
   &.active {
     color: $title;
     font-weight: 600;
   }
+
   @include mobile {
     padding: 15px 10px;
     width: 100%;
