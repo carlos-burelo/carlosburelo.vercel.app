@@ -1,16 +1,14 @@
 [
-  {"#": "Motivación"},
+  { "#": "Motivación" },
   {
     "#": "Propuestas",
     "+": [
-      {"#": "Template",
-        "+": [
-          {"#":"Bucles o iteradores"},
-          {"#":"Condicionales"}
-        ]
+      {
+        "#": "Template",
+        "+": [{ "#": "Bucles o iteradores" }, { "#": "Condicionales" }]
       },
-      {"#": "Props"}
+      { "#": "Props" }
     ]
   },
-  {"#": "Continuara"}
+  { "#": "Continuara" }
 ]
